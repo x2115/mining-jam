@@ -7,4 +7,5 @@ if(state==states.mine){
 		case dirs.up: block=instance_position(x,y-19,o_block_parent); break;
 	}
 	mine_block(block);
+	minecdtimer=minecdtime;
 }

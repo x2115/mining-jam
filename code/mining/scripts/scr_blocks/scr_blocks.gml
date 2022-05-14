@@ -1,10 +1,14 @@
 function mine_block(block){
 	if(instance_exists(block)){
-		if(block.image_index==0){
-			block.crumbletimer=block.crumbletime;
-			block.image_index++;	
-		}else{
-			instance_destroy(block);	
+		if(block.crumbletimer==0){
+			if(block.image_index==0){
+				if(y>block.y){
+					block.crumbletimer=block.crumbletime;
+				}
+				block.image_index++;	
+			}else{
+				instance_destroy(block);	
+			}
 		}
 	}
 }
@@ -25,6 +29,6 @@ function build_chunk(chunk_pos,height){
 	}
 }
 
-function marble_rectangle(){
+function check_for_rectangle(){
 		
 }

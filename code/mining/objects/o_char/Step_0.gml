@@ -1,6 +1,9 @@
 get_input();
 
 if(state!=states.mine){
+	if(minecdtimer>0){
+		minecdtimer--;	
+	}
 	var fdir=right-left;
 	if(fdir!=0){
 		facing=fdir;	
@@ -16,18 +19,22 @@ if(state!=states.mine){
 	xspd+=accel*fdir;
 	xspd=move_towards_zero(xspd,fric);
 	xspd=clamp(xspd,-mspd,mspd);
-
+	var solidground=instance_position(x,y+1,o_block_parent);
 	if(place_free(x,y+1)){
 		yspd+=grav;	
 		coyotetimer--;
 		state=states.jump;
 	}else{
 		if(xspd==0){
-			state=states.idle;
+			if(solidground){
+				state=states.idle;
+			}else{
+				state=states.wobbling;	
+			}
 		}else{
 			state=states.walk;	
 		}
-		if(mine){
+		if(mine&&solidground&&minecdtimer<=0){
 			state=states.mine;	
 			image_index=0;
 		}
@@ -52,8 +59,6 @@ if(state!=states.mine){
 	y+=yspd;
 	x=clamp(x,4,room_width-4);
 	y=max(y,global.cam_y);
-}else{
-		
 }
 switch(state){
 	case states.mine:
@@ -69,6 +74,9 @@ switch(state){
 			case dirs.forwards: sprite_index=s_char_idle_f; break;
 			case dirs.down: sprite_index=s_char_idle_d; break;
 		}
+		break;
+	case states.wobbling:
+		sprite_index=s_char_wobbling;
 		break;
 	case states.walk:
 		sprite_index=s_char_walk;

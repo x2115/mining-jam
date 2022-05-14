@@ -1,5 +1,6 @@
 enum states{
 	idle,
+	wobbling,
 	walk,
 	mine,
 	jump
@@ -24,7 +25,8 @@ fric=accel/2;
 mspd=1.1;
 grav=0.3;
 jspd=3.2;
-
+minecdtime=4;
+minecdtimer=minecdtime;
 coyotetime=3;
 coyotetimer=coyotetime;
 y=-4;

@@ -1,5 +1,5 @@
 if(!place_free(x,y+1)){
-	crumbletimer=crumbletime;	
+	crumbletimer=0;	
 }else{
 	if(crumbletimer>0){
 		crumbletimer--;	
