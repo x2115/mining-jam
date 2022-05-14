@@ -3,6 +3,6 @@
 
 // Inherit the parent event
 event_inherited();
-if(image_index==0){
+if(y<global.cam_y+setup.screen_height){
 	check_for_rectangle();
 }

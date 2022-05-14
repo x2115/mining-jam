@@ -19,6 +19,6 @@ if(!place_free(x,y+1)){
 	}
 }
 
-if(y<global.cam_y-256){
+if(y<global.cam_y-64){
 	instance_destroy();	
 }

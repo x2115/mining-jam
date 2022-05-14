@@ -31,3 +31,8 @@ coyotetime=3;
 coyotetimer=coyotetime;
 y=-4;
 instance_create_depth(x,y,depth,o_camera);
+
+game_length=3*60*1000//three minutes
+global.end_time=current_time+game_length;
+global.score=0;
+game_started=false;

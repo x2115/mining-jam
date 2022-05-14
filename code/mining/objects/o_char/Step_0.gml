@@ -1,9 +1,12 @@
 get_input();
-
+if(!game_started){
+	global.end_time=current_time+game_length+1000;	
+}
+if(minecdtimer>0){
+	minecdtimer--;	
+}
 if(state!=states.mine){
-	if(minecdtimer>0){
-		minecdtimer--;	
-	}
+	
 	var fdir=right-left;
 	if(fdir!=0){
 		facing=fdir;	
@@ -15,8 +18,11 @@ if(state!=states.mine){
 	}else{
 		aimdir=dirs.forwards;
 	}
-	
-	xspd+=accel*fdir;
+	if(minecdtimer<=0){
+		xspd+=accel*fdir;
+	}else{
+		xspd=0;	
+	}
 	xspd=move_towards_zero(xspd,fric);
 	xspd=clamp(xspd,-mspd,mspd);
 	var solidground=instance_position(x,y+1,o_block_parent);
@@ -35,13 +41,16 @@ if(state!=states.mine){
 			state=states.walk;	
 		}
 		if(mine&&solidground&&minecdtimer<=0){
-			state=states.mine;	
-			image_index=0;
+			if(can_mine()){
+				game_started=true;
+				state=states.mine;	
+				image_index=0;
+			}
 		}
 		yspd=0;
 		coyotetimer=coyotetime;
 	}
-	if(jump&&coyotetimer>0){
+	if(jump&&coyotetimer>0&&place_free(x,y-8)){
 		coyotetimer=0;
 		yspd=-jspd;	
 	}
