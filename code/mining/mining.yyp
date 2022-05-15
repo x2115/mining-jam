@@ -7,6 +7,7 @@
     {"id":{"name":"font_main","path":"fonts/font_main/font_main.yy",},"order":0,},
     {"id":{"name":"r_main","path":"rooms/r_main/r_main.yy",},"order":1,},
     {"id":{"name":"s_empty_space","path":"sprites/s_empty_space/s_empty_space.yy",},"order":9,},
+    {"id":{"name":"r_highscore","path":"rooms/r_highscore/r_highscore.yy",},"order":2,},
     {"id":{"name":"o_char_dead","path":"objects/o_char_dead/o_char_dead.yy",},"order":5,},
     {"id":{"name":"o_block_parent","path":"objects/o_block_parent/o_block_parent.yy",},"order":1,},
     {"id":{"name":"s_char_jump","path":"sprites/s_char_jump/s_char_jump.yy",},"order":8,},
@@ -27,6 +28,7 @@
     {"id":{"name":"o_chunk_maker","path":"objects/o_chunk_maker/o_chunk_maker.yy",},"order":6,},
     {"id":{"name":"scr_blocks","path":"scripts/scr_blocks/scr_blocks.yy",},"order":2,},
     {"id":{"name":"bk_main","path":"sprites/bk_main/bk_main.yy",},"order":8,},
+    {"id":{"name":"o_highscores","path":"objects/o_highscores/o_highscores.yy",},"order":9,},
     {"id":{"name":"s_char_walk","path":"sprites/s_char_walk/s_char_walk.yy",},"order":7,},
     {"id":{"name":"s_block_edge","path":"sprites/s_block_edge/s_block_edge.yy",},"order":11,},
     {"id":{"name":"o_block_marble","path":"objects/o_block_marble/o_block_marble.yy",},"order":3,},
@@ -49,6 +51,7 @@
   "RoomOrderNodes": [
     {"roomId":{"name":"r_setup","path":"rooms/r_setup/r_setup.yy",},},
     {"roomId":{"name":"r_main","path":"rooms/r_main/r_main.yy",},},
+    {"roomId":{"name":"r_highscore","path":"rooms/r_highscore/r_highscore.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":1,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},
