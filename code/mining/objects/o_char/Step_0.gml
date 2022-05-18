@@ -66,7 +66,7 @@ if(state!=states.mine){
 	
 	}
 	y+=yspd;
-	x=clamp(x,4,room_width-4);
+	x=clamp(x,5,room_width-5);
 	y=max(y,global.cam_y);
 }
 switch(state){

@@ -11,4 +11,5 @@ if(down){
 }else{
 	global.cam_offset=lerp(global.cam_offset,0,offspd);
 }
+
 camera_set_view_pos(view_camera[0],0,global.cam_y+global.cam_offset);

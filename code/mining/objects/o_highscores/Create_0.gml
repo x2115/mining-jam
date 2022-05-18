@@ -4,3 +4,5 @@ if(global.score>previous_score){
 	ini_write_real("score","highscore",global.score);	
 }
 ini_close();
+
+

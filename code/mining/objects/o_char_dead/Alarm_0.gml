@@ -1,1 +1,1 @@
-room_restart();
+room_goto(r_highscore);
